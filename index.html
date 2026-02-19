@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J&co. — Software</title>
+  <meta name="description" content="J&co. builds customized apps and software tailored to what your business needs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/title.png" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="#" class="logo" aria-label="J&co. Home">
+      <img src="assets/logo.png" alt="" width="100" height="25" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <span class="logo-text" aria-hidden="true">J&co.</span>
+    </a>
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#demos">Demos</a>
+      <a href="#services">Services</a>
+      <a href="#clients">Clients</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      
+      <p class="hero-tag">Software company</p>
+      <h1 class="hero-title">Customized apps and software for what you need.</h1>
+      <p class="hero-desc">We build tailored solutions—apps and software designed around your business and your customers’ needs.</p>
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
+    </section>
+
+    <section id="work" class="section-work">
+      <h2 class="section-label">Work</h2>
+      <p class="section-intro">Custom solutions we’ve designed and built for real businesses.</p>
+      <ul class="work-list">
+        <li class="work-item">
+          <span class="work-name">Platform &amp; APIs</span>
+          <span class="work-detail">Backend systems, integrations, and scalable infrastructure.</span>
+        </li>
+        <li class="work-item">
+          <span class="work-name">Web &amp; product</span>
+          <span class="work-detail">Web apps and product experiences that people enjoy using.</span>
+        </li>
+        <li class="work-item">
+          <span class="work-name">Consulting</span>
+          <span class="work-detail">Architecture, audits, and guidance for existing systems.</span>
+        </li>
+        <li class="work-item">
+          <span class="work-name">Websites</span>
+          <span class="work-detail">Minimalized and full integrated websites for you growing Business.</span>
+        </li>
+        <li class="work-item">
+          <span class="work-name">Mobile Apps</span>
+          <span class="work-detail">Customized Mobile apps that supports Ios / Android</span>
+        </li>
+      </ul>
+      <div class="portfolio-title">
+       <h2 class="section-label">Portfolio</h2>
+      <p class="section-intro">Swipe or click through project cards with smooth animated transitions.</p>
+    </div>
+    </section>
+
+
+    <section id="portfolio" class="section">
+     
+      <div class="portfolio-shell">
+        <button class="portfolio-nav prev" id="portfolio-prev" aria-label="Previous project">&larr;</button>
+        <div class="portfolio-track" id="portfolio-track" aria-live="polite"></div>
+        <button class="portfolio-nav next" id="portfolio-next" aria-label="Next project">&rarr;</button>
+      </div>
+      <div class="portfolio-dots" id="portfolio-dots"></div>
+    </section>
+
+    <section id="demos" class="section">
+      <h2 class="section-label">Demos</h2>
+      <p class="section-intro">We create customized apps and software to match what our customers need. Here’s one we built—try it yourself.</p>
+      <div class="demo-grid">
+        <article class="demo-card">
+          <div class="demo-card-inner">
+            <h3 class="demo-title">Barber Shop Appointment App</h3>
+            <p class="demo-desc">A custom app for booking and managing appointments, built for real barber shops in production.</p>
+            <!-- Replace YOUR_APP_URL with your live app URL -->
+            <a href="https://barber-appointment-app-production.up.railway.app/" class="btn btn-demo" target="_blank" rel="noopener noreferrer">View demo</a>
+          </div>
+        </article>
+      </div>
+       <div class="demo-grid-2">
+        <article class="demo-card">
+          <div class="demo-card-inner">
+            <h3 class="demo-title">ERP System</h3>
+            <p class="demo-desc">An advanced ERP solution that transforms the way you manage your business — from billing and stock control to customer management and reporting — all in one powerful system.</p>
+            <!-- Replace YOUR_APP_URL with your live app URL -->
+            <a href="https://erp-demo-9dp.pages.dev/admin" class="btn btn-demo" target="_blank" rel="noopener noreferrer">View demo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <h2 class="section-label">Services</h2>
+      <p class="section-intro">Customized apps and software, built around your requirements.</p>
+      <ul class="services-grid">
+        <li class="service-card">
+          <h3>Custom apps &amp; software</h3>
+          <p>We design and build apps and software tailored to what you and your customers need—from concept to deployment.</p>
+        </li>
+        <li class="service-card">
+          <h3>Integration</h3>
+          <p>APIs, data pipelines, and third-party systems wired correctly and documented for your setup.</p>
+        </li>
+        <li class="service-card">
+          <h3>Ongoing support</h3>
+          <p>Maintenance, updates, and evolution so your software stays secure and relevant.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="clients" class="section">
+      <h2 class="section-label">Clients</h2>
+      <p class="section-intro">Teams currently working with us and businesses that already use our software.</p>
+
+      <div class="clients-wrap">
+          <article class="client-group">
+            <h3>Currently working with</h3>
+            <ul class="client-list">
+              <li class="client-item">
+                <img src="assets/valvoline.png" alt="Valvoline Distributor logo" class="client-logo" />
+                <span>Valvoline Distributor- Matale</span>
+              </li>
+              <li class="client-item">
+                <img src="assets/soft.png" alt="Soft Distributor logo" class="client-logo" />
+                <span>Soft Distributor - Matale</span>
+              </li>
+              <li class="client-item">J&co. Internal Products - Ongoing Improvements</li>
+            </ul>
+          </article>
+
+        <article class="client-group">
+          <h3>Businesses that got our service</h3>
+          <ul class="client-list">
+            <li class="client-item">Salon and barber booking systems</li>
+            <li class="client-item">Small business web and dashboard apps</li>
+            <li class="client-item">Custom software integrations and automation</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="reviews" class="section">
+      <h2 class="section-label">Reviews</h2>
+      <p class="section-intro">Visitors can rate our service and leave a review.</p>
+
+      <div class="reviews-wrap">
+        <form id="review-form" class="review-form">
+          <div class="field-row">
+            <label for="review-name">Your name</label>
+            <input id="review-name" type="text" maxlength="60" required />
+          </div>
+
+          <div class="field-row">
+            <label>Your rating</label>
+            <div id="rating-stars" class="rating-stars" role="radiogroup" aria-label="Rating"></div>
+            <input id="review-rating" type="hidden" value="5" />
+          </div>
+
+          <div class="field-row">
+            <label for="review-text">Your review</label>
+            <textarea id="review-text" rows="4" maxlength="500" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit review</button>
+          <p id="review-message" class="review-message"></p>
+        </form>
+
+          <div>
+            <div class="reviews-summary">
+              <strong id="reviews-average">0.0</strong>
+              <span id="reviews-count">(0 reviews)</span>
+              <button type="button" id="reviews-admin-toggle" class="reviews-admin-toggle">Admin mode</button>
+            </div>
+            <ul id="reviews-list" class="reviews-list"></ul>
+          </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <h2 class="section-label">Contact</h2>
+      <p class="contact-intro">Need a customized app or software? Tell us what you need—we’d like to hear from you.</p>
+      <div class="contact-details">
+        <a href="mailto:nvnkesara@gmail.com" class="contact-link">jncosoftwaresolutions@gmail.com</a>
+        <a href="tel:+94770654279" class="contact-link">+94 77 065 4279</a>
+        <p class="contact-address">No 36/A Agalawatta Road, Matale, 21000</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="#" class="footer-logo" aria-label="J&co. Home">
+      <img src="assets/logo.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" />
+      <span class="logo-text">J&co.</span>
+    </a>
+    <p class="footer-copy">&copy; <span id="year"></span> J&co. All rights reserved.</p>
+  </footer>
+
+  <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const portfolioProjects = [
+    {
+      title: 'Portfolio 1',
+      subtitle: 'Service business website',
+      images: ['assets/portfolio 1/1(1).png', 'assets/portfolio 1/3(1).png', 'assets/portfolio 1/3.png', 'assets/portfolio 1/4(1).png', 'assets/portfolio 1/4.png']
+    },
+    {
+      title: 'Portfolio 2',
+      subtitle: 'Landing page concept',
+      images: ['assets/portfolio 2/1(2).png', 'assets/portfolio 2/2(2).png']
+    },
+    {
+      title: 'Portfolio 3',
+      subtitle: 'Dashboard and web app',
+      images: ['assets/portfolio 3/1(3).png', 'assets/portfolio 3/2(1).png', 'assets/portfolio 3/2(3).png', 'assets/portfolio 3/5(1).png', 'assets/portfolio 3/5.png']
+    },
+    {
+      title: 'Portfolio 4',
+      subtitle: 'Brand and product visuals',
+      images: ['assets/portfolio 4/1(4).png', 'assets/portfolio 4/2(4).png']
+    },
+    {
+      title: 'Portfolio 5',
+      subtitle: 'Mobile-first UI set',
+      images: ['assets/portfolio 5/1(5).png', 'assets/portfolio 5/2(5).png', 'assets/portfolio 5/3(2).png']
+    }
+  ];
+
+  const slides = portfolioProjects.flatMap((project) =>
+    project.images.map((src, i) => ({
+      src,
+      title: project.title,
+      subtitle: project.subtitle,
+      text: `${project.title} - Screen ${i + 1}`
+    }))
+  );
+
+  const trackEl = document.getElementById('portfolio-track');
+  const dotsEl = document.getElementById('portfolio-dots');
+  const prevBtn = document.getElementById('portfolio-prev');
+  const nextBtn = document.getElementById('portfolio-next');
+
+  let active = 0;
+  const AUTOPLAY_MS = 2500;
+  let autoplayTimer = null;
+  let touchStartX = 0;
+
+  function wrappedDelta(index, current, total) {
+    let d = index - current;
+    if (d > total / 2) d -= total;
+    if (d < -total / 2) d += total;
+    return d;
+  }
+
+  function roleFromDelta(d) {
+    if (d === 0) return 'role-active';
+    if (d === -1) return 'role-prev';
+    if (d === 1) return 'role-next';
+    return d < 0 ? 'role-hidden-left' : 'role-hidden-right';
+  }
+
+  const cardEls = slides.map((slide) => {
+    const card = document.createElement('article');
+    card.className = 'portfolio-card role-hidden-right';
+    card.innerHTML = `
+      <img src="${slide.src}" alt="${slide.text}" loading="lazy" />
+      <div class="portfolio-meta">
+        <h3>${slide.title}</h3>
+        <p>${slide.subtitle}</p>
+      </div>
+    `;
+    trackEl.appendChild(card);
+    return card;
+  });
+
+  function goTo(index, restart = true) {
+    const total = slides.length;
+    active = (index + total) % total;
+
+    for (let i = 0; i < total; i += 1) {
+      const d = wrappedDelta(i, active, total);
+      cardEls[i].className = `portfolio-card ${roleFromDelta(d)}`;
+    }
+
+    dotsEl.querySelectorAll('.portfolio-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === active);
+    });
+
+    if (restart) restartAutoplay();
+  }
+
+  function buildDots() {
+    dotsEl.innerHTML = '';
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = `portfolio-dot${i === active ? ' active' : ''}`;
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(dot);
+    });
+  }
+
+  function next() { goTo(active + 1); }
+  function prev() { goTo(active - 1); }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(() => goTo(active + 1, false), AUTOPLAY_MS);
+  }
+
+  function stopAutoplay() {
+    if (!autoplayTimer) return;
+    clearInterval(autoplayTimer);
+    autoplayTimer = null;
+  }
+
+  function restartAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+
+  trackEl.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  trackEl.addEventListener('touchend', (e) => {
+    const delta = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(delta) < 30) return;
+    if (delta > 0) prev(); else next();
+  }, { passive: true });
+
+  document.addEventListener('keydown', (e) => {
+    const tag = e.target?.tagName?.toLowerCase() || '';
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target?.isContentEditable) return;
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  });
+
+  trackEl.addEventListener('mouseenter', stopAutoplay);
+  trackEl.addEventListener('mouseleave', startAutoplay);
+  prevBtn.addEventListener('mouseenter', stopAutoplay);
+  prevBtn.addEventListener('mouseleave', startAutoplay);
+  nextBtn.addEventListener('mouseenter', stopAutoplay);
+  nextBtn.addEventListener('mouseleave', startAutoplay);
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopAutoplay();
+    else startAutoplay();
+  });
+
+  buildDots();
+  goTo(0, false);
+  startAutoplay();
+
+  const reviewForm = document.getElementById('review-form');
+  const reviewNameEl = document.getElementById('review-name');
+  const reviewTextEl = document.getElementById('review-text');
+  const reviewRatingEl = document.getElementById('review-rating');
+  const reviewMessageEl = document.getElementById('review-message');
+  const reviewsListEl = document.getElementById('reviews-list');
+  const reviewsAverageEl = document.getElementById('reviews-average');
+  const reviewsCountEl = document.getElementById('reviews-count');
+  const reviewsAdminToggleEl = document.getElementById('reviews-admin-toggle');
+  const ratingStarsEl = document.getElementById('rating-stars');
+  const REVIEWS_API_URL = '/api/reviews';
+  const REVIEW_ADMIN_KEY_STORAGE = 'jco_review_admin_key';
+  let reviewsCache = [];
+  let reviewAdminKey = sessionStorage.getItem(REVIEW_ADMIN_KEY_STORAGE) || '';
+
+  function starStringSafe(rating) {
+    return `${'\u2605'.repeat(rating)}${'\u2606'.repeat(5 - rating)}`;
+  }
+
+  function getReviews() {
+    return Array.isArray(reviewsCache) ? reviewsCache : [];
+  }
+
+  function setReviews(items) {
+    reviewsCache = Array.isArray(items) ? items : [];
+  }
+
+  function isReviewAdmin() {
+    return Boolean(reviewAdminKey);
+  }
+
+  function updateReviewAdminUi() {
+    reviewsAdminToggleEl.textContent = isReviewAdmin() ? 'Admin unlocked' : 'Admin mode';
+    reviewsAdminToggleEl.classList.toggle('active', isReviewAdmin());
+  }
+
+  async function deleteReview(id) {
+    if (!isReviewAdmin() || !id) return;
+    const ok = window.confirm('Delete this review?');
+    if (!ok) return;
+
+    try {
+      const res = await fetch(`${REVIEWS_API_URL}/${encodeURIComponent(id)}`, {
+        method: 'DELETE',
+        headers: { 'x-admin-key': reviewAdminKey }
+      });
+      if (res.status === 401) {
+        sessionStorage.removeItem(REVIEW_ADMIN_KEY_STORAGE);
+        reviewAdminKey = '';
+        updateReviewAdminUi();
+        reviewMessageEl.textContent = 'Admin key expired or invalid.';
+        return;
+      }
+      if (!res.ok) throw new Error('delete failed');
+      await loadReviews();
+      reviewMessageEl.textContent = 'Review deleted.';
+    } catch (_error) {
+      reviewMessageEl.textContent = 'Failed to delete review.';
+    }
+  }
+
+  function starString(rating) {
+    return `${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}`;
+  }
+
+  function renderReviews() {
+    const reviews = getReviews();
+    reviewsListEl.innerHTML = '';
+
+    if (!reviews.length) {
+      reviewsAverageEl.textContent = '0.0';
+      reviewsCountEl.textContent = '(0 reviews)';
+      reviewsListEl.innerHTML = '<li class="review-empty">No reviews yet.</li>';
+      return;
+    }
+
+    const avg = reviews.reduce((sum, r) => sum + Number(r.rating), 0) / reviews.length;
+    reviewsAverageEl.textContent = avg.toFixed(1);
+    reviewsCountEl.textContent = `(${reviews.length} reviews)`;
+
+    reviews.forEach((review) => {
+      const li = document.createElement('li');
+      li.className = 'review-item';
+
+      const top = document.createElement('div');
+      top.className = 'review-top';
+
+      const nameEl = document.createElement('strong');
+      nameEl.textContent = review.name;
+
+      const starsEl = document.createElement('span');
+      starsEl.className = 'review-stars';
+      starsEl.textContent = starStringSafe(Number(review.rating));
+
+      const textEl = document.createElement('p');
+      textEl.textContent = review.text;
+
+      top.appendChild(nameEl);
+      top.appendChild(starsEl);
+
+      if (isReviewAdmin() && review.id) {
+        const deleteBtn = document.createElement('button');
+        deleteBtn.type = 'button';
+        deleteBtn.className = 'review-delete-btn';
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.addEventListener('click', () => deleteReview(review.id));
+        top.appendChild(deleteBtn);
+      }
+
+      li.appendChild(top);
+      li.appendChild(textEl);
+      reviewsListEl.appendChild(li);
+    });
+  }
+
+  function renderStarPicker(selected) {
+    ratingStarsEl.innerHTML = '';
+    for (let i = 1; i <= 5; i += 1) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = `star-btn${i <= selected ? ' active' : ''}`;
+      btn.setAttribute('aria-label', `${i} star${i > 1 ? 's' : ''}`);
+      btn.textContent = '★';
+      btn.textContent = '\u2605';
+      btn.addEventListener('click', () => {
+        reviewRatingEl.value = String(i);
+        renderStarPicker(i);
+      });
+      ratingStarsEl.appendChild(btn);
+    }
+  }
+
+  async function loadReviews() {
+    try {
+      const res = await fetch(REVIEWS_API_URL, { headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error('load failed');
+      const items = await res.json();
+      setReviews(Array.isArray(items) ? items : []);
+      renderReviews();
+    } catch (_error) {
+      reviewsAverageEl.textContent = '0.0';
+      reviewsCountEl.textContent = '(0 reviews)';
+      reviewsListEl.innerHTML = '<li class="review-empty">Failed to load reviews.</li>';
+    }
+  }
+
+  reviewsAdminToggleEl.addEventListener('click', () => {
+    if (isReviewAdmin()) {
+      reviewAdminKey = '';
+      sessionStorage.removeItem(REVIEW_ADMIN_KEY_STORAGE);
+      updateReviewAdminUi();
+      renderReviews();
+      return;
+    }
+
+    const entered = window.prompt('Enter admin delete key');
+    if (!entered) return;
+    reviewAdminKey = entered.trim();
+    sessionStorage.setItem(REVIEW_ADMIN_KEY_STORAGE, reviewAdminKey);
+    updateReviewAdminUi();
+    renderReviews();
+  });
+
+  reviewForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    reviewMessageEl.textContent = '';
+
+    const name = reviewNameEl.value.trim();
+    const text = reviewTextEl.value.trim();
+    const rating = Number(reviewRatingEl.value);
+    if (!name || !text || rating < 1 || rating > 5) {
+      reviewMessageEl.textContent = 'Please fill all fields with a valid rating.';
+      return;
+    }
+
+    const submitBtn = reviewForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    try {
+      const res = await fetch(REVIEWS_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, text, rating })
+      });
+      if (!res.ok) throw new Error('submit failed');
+
+      reviewForm.reset();
+      reviewRatingEl.value = '5';
+      renderStarPicker(5);
+      reviewMessageEl.textContent = 'Review submitted successfully.';
+      await loadReviews();
+    } catch (_error) {
+      reviewMessageEl.textContent = 'Failed to submit review. Please try again.';
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+
+  updateReviewAdminUi();
+  renderStarPicker(5);
+  loadReviews();
+</script>
+
+</body>
+</html>
