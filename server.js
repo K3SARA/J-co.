@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -107,6 +108,10 @@ app.delete('/api/reviews/:id', requireAdmin, (req, res) => {
   } catch (error) {
     return res.status(500).json({ error: 'Failed to delete review' });
   }
+});
+
+app.post('/api/reviews/admin-check', requireAdmin, (_req, res) => {
+  return res.json({ ok: true });
 });
 
 app.listen(PORT, () => {
