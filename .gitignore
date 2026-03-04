@@ -1,2 +1,2 @@
-node_modules/
-reviews.db.json
+.env
+.env.*
