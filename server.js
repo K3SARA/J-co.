@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const DB_FILE = path.join(__dirname, 'reviews.db.json');
+const DB_FILE = path.resolve(process.env.REVIEWS_DB_FILE || path.join(__dirname, 'reviews.db.json'));
 const MAX_REVIEWS = 200;
 const ADMIN_DELETE_KEY = process.env.ADMIN_DELETE_KEY || 'change-this-admin-delete-key';
 
@@ -13,6 +13,10 @@ app.use(express.json({ limit: '200kb' }));
 app.use(express.static(__dirname));
 
 function ensureDbFile() {
+  const dir = path.dirname(DB_FILE);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
   if (!fs.existsSync(DB_FILE)) {
     fs.writeFileSync(DB_FILE, JSON.stringify({ reviews: [] }, null, 2), 'utf8');
   }
@@ -117,4 +121,6 @@ app.post('/api/reviews/admin-check', requireAdmin, (_req, res) => {
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`J&co web running on http://localhost:${PORT}`);
+  // eslint-disable-next-line no-console
+  console.log(`Reviews DB path: ${DB_FILE}`);
 });
