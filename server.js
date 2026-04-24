@@ -93,6 +93,9 @@ function createMailTransport() {
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT || 587),
     secure: String(process.env.SMTP_SECURE || '').toLowerCase() === 'true',
+    connectionTimeout: Number(process.env.SMTP_CONNECTION_TIMEOUT || 10000),
+    greetingTimeout: Number(process.env.SMTP_GREETING_TIMEOUT || 10000),
+    socketTimeout: Number(process.env.SMTP_SOCKET_TIMEOUT || 15000),
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS
@@ -249,6 +252,9 @@ app.post('/api/careers/apply', handleCareerUpload, async (req, res) => {
 
     return res.status(201).json({ ok: true });
   } catch (error) {
+    if (['ETIMEDOUT', 'ESOCKET', 'ECONNECTION'].includes(error.code)) {
+      return res.status(504).json({ error: 'Email server connection timed out. SMTP may be blocked on the deployed server.' });
+    }
     return res.status(500).json({ error: error.message || 'Failed to submit application.' });
   }
 });
