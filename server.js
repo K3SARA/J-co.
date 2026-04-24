@@ -88,6 +88,10 @@ function hasSmtpConfig() {
   );
 }
 
+function hasResendConfig() {
+  return Boolean(process.env.RESEND_API_KEY && process.env.RESEND_FROM_EMAIL);
+}
+
 function createMailTransport() {
   return nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -100,6 +104,73 @@ function createMailTransport() {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS
     }
+  });
+}
+
+async function sendCareerApplicationEmail({ name, email, phone, role, experience, portfolio, message, submittedAt, html, file }) {
+  const subject = `Career application: ${role} - ${name}`;
+  const text = [
+    'New career application',
+    `Role: ${role}`,
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Phone: ${phone}`,
+    `Experience: ${experience}`,
+    `Portfolio: ${portfolio || 'Not provided'}`,
+    `Submitted: ${submittedAt}`,
+    '',
+    message
+  ].join('\n');
+
+  if (hasResendConfig()) {
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        from: process.env.RESEND_FROM_EMAIL,
+        to: [CAREERS_TO_EMAIL],
+        reply_to: email,
+        subject,
+        text,
+        html,
+        attachments: [
+          {
+            filename: file.originalname,
+            content: file.buffer.toString('base64')
+          }
+        ]
+      })
+    });
+
+    if (!response.ok) {
+      const detail = await response.text().catch(() => '');
+      throw new Error(`Email API failed: ${detail || response.statusText}`);
+    }
+    return;
+  }
+
+  if (!hasSmtpConfig()) {
+    throw new Error('Career application email needs real SMTP settings or Resend settings.');
+  }
+
+  const transport = createMailTransport();
+  await transport.sendMail({
+    from: process.env.SMTP_FROM || process.env.SMTP_USER,
+    to: CAREERS_TO_EMAIL,
+    replyTo: email,
+    subject,
+    text,
+    html,
+    attachments: [
+      {
+        filename: file.originalname,
+        content: file.buffer,
+        contentType: file.mimetype
+      }
+    ]
   });
 }
 
@@ -204,11 +275,10 @@ app.post('/api/careers/apply', handleCareerUpload, async (req, res) => {
       return res.status(400).json({ error: 'Please enter a valid email address.' });
     }
 
-    if (!hasSmtpConfig()) {
-      return res.status(503).json({ error: 'Career application email needs real SMTP settings in .env.' });
+    if (!hasSmtpConfig() && !hasResendConfig()) {
+      return res.status(503).json({ error: 'Career application email needs real SMTP settings or Resend settings.' });
     }
 
-    const transport = createMailTransport();
     const submittedAt = new Date().toLocaleString('en-US', { timeZone: 'Asia/Colombo' });
     const html = `
       <h2>New career application</h2>
@@ -223,31 +293,17 @@ app.post('/api/careers/apply', handleCareerUpload, async (req, res) => {
       <p>${escapeHtml(message)}</p>
     `;
 
-    await transport.sendMail({
-      from: process.env.SMTP_FROM || process.env.SMTP_USER,
-      to: CAREERS_TO_EMAIL,
-      replyTo: email,
-      subject: `Career application: ${role} - ${name}`,
-      text: [
-        'New career application',
-        `Role: ${role}`,
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Phone: ${phone}`,
-        `Experience: ${experience}`,
-        `Portfolio: ${portfolio || 'Not provided'}`,
-        `Submitted: ${submittedAt}`,
-        '',
-        message
-      ].join('\n'),
+    await sendCareerApplicationEmail({
+      name,
+      email,
+      phone,
+      role,
+      experience,
+      portfolio,
+      message,
+      submittedAt,
       html,
-      attachments: [
-        {
-          filename: req.file.originalname,
-          content: req.file.buffer,
-          contentType: req.file.mimetype
-        }
-      ]
+      file: req.file
     });
 
     return res.status(201).json({ ok: true });
