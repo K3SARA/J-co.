@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Careers | J&co. Software</title>
+  <meta name="description" content="Careers at J&co. Join a software team building customized apps, websites, and business systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/title.png" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="logo" aria-label="J&co. Home">
+      <img src="assets/logo.png" alt="" width="100" height="25" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <span class="logo-text" aria-hidden="true">J&co.</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="index.html#demos">Demos</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#clients">Clients</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="careers.html" aria-current="page">Careers</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero careers-hero">
+      <p class="hero-tag">Careers</p>
+      <h1 class="hero-title">Build practical software with a small, focused team.</h1>
+      <p class="hero-desc">We work on custom apps, websites, dashboards, and business systems for teams that need software shaped around their day-to-day work.</p>
+      <button type="button" class="btn btn-primary js-apply-btn" data-role="General application">Apply now</button>
+    </section>
+
+    <section class="section">
+      <h2 class="section-label">Open Roles</h2>
+      <p class="section-intro">We are open to people who can take ownership, communicate clearly, and ship reliable work.</p>
+
+      <div class="careers-list">
+        <article class="career-card">
+          <div>
+            <p class="career-type">Full-time / Internship</p>
+            <h3>Software Developer</h3>
+            <p>Build web apps, business tools, integrations, and admin dashboards using practical, maintainable code.</p>
+          </div>
+          <button type="button" class="btn btn-demo js-apply-btn" data-role="Software Developer">Apply</button>
+        </article>
+
+        <article class="career-card">
+          <div>
+            <p class="career-type">Project-based</p>
+            <h3>UI / Web Designer</h3>
+            <p>Design clean websites, product screens, and customer-facing interfaces that are easy to understand and use.</p>
+          </div>
+          <button type="button" class="btn btn-demo js-apply-btn" data-role="UI / Web Designer">Apply</button>
+        </article>
+
+        <article class="career-card">
+          <div>
+            <p class="career-type">Internship</p>
+            <h3>Software Intern</h3>
+            <p>Learn by helping with real client work, testing, content updates, UI fixes, and internal product improvements.</p>
+          </div>
+          <button type="button" class="btn btn-demo js-apply-btn" data-role="Software Intern">Apply</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-label">What We Value</h2>
+      <ul class="values-grid">
+        <li class="service-card">
+          <h3>Clear thinking</h3>
+          <p>We prefer simple, direct solutions that match the real problem and are easy to maintain.</p>
+        </li>
+        <li class="service-card">
+          <h3>Reliable delivery</h3>
+          <p>Clients depend on our work, so we care about testing, details, deadlines, and clean handover.</p>
+        </li>
+        <li class="service-card">
+          <h3>Ownership</h3>
+          <p>We look for people who ask good questions, follow through, and improve the work in front of them.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section application-section">
+      <h2 class="section-label">How To Apply</h2>
+      <p class="section-intro">Complete the application form with your details, role preference, experience, portfolio links, and CV.</p>
+      <div class="application-panel">
+        <button type="button" class="contact-link application-link js-apply-btn" data-role="General application">
+          <span class="contact-icon icon-mail" aria-hidden="true"></span>
+          <span>Open application form</span>
+        </button>
+        <p>Your submitted details and CV will be sent directly to J&co. by email.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="application-modal" id="application-modal" hidden>
+    <div class="application-backdrop" data-close-application></div>
+    <section class="application-dialog" role="dialog" aria-modal="true" aria-labelledby="application-title">
+      <div class="application-dialog-header">
+        <div>
+          <p class="hero-tag">Application</p>
+          <h2 id="application-title">Apply to J&co.</h2>
+        </div>
+        <button type="button" class="application-close" aria-label="Close application form" data-close-application>&times;</button>
+      </div>
+
+      <form id="application-form" class="application-form">
+        <div class="field-row">
+          <label for="applicant-name">Full name</label>
+          <input id="applicant-name" name="name" type="text" maxlength="80" required />
+        </div>
+
+        <div class="application-field-grid">
+          <div class="field-row">
+            <label for="applicant-email">Email</label>
+            <input id="applicant-email" name="email" type="email" maxlength="120" required />
+          </div>
+          <div class="field-row">
+            <label for="applicant-phone">Phone</label>
+            <input id="applicant-phone" name="phone" type="tel" maxlength="40" required />
+          </div>
+        </div>
+
+        <div class="application-field-grid">
+          <div class="field-row">
+            <label for="applicant-role">Role</label>
+            <select id="applicant-role" name="role" required>
+              <option value="Software Developer">Software Developer</option>
+              <option value="UI / Web Designer">UI / Web Designer</option>
+              <option value="Software Intern">Software Intern</option>
+              <option value="General application">General application</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <label for="applicant-experience">Experience</label>
+            <select id="applicant-experience" name="experience" required>
+              <option value="Student / beginner">Student / beginner</option>
+              <option value="Less than 1 year">Less than 1 year</option>
+              <option value="1-3 years">1-3 years</option>
+              <option value="3+ years">3+ years</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <label for="applicant-portfolio">Portfolio / GitHub / LinkedIn</label>
+          <input id="applicant-portfolio" name="portfolio" type="url" maxlength="200" placeholder="https://" />
+        </div>
+
+        <div class="field-row">
+          <label for="applicant-message">Short message</label>
+          <textarea id="applicant-message" name="message" rows="4" maxlength="1200" required></textarea>
+        </div>
+
+        <div class="field-row">
+          <label for="applicant-cv">Upload CV</label>
+          <input id="applicant-cv" name="cv" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required />
+          <span class="field-help">PDF, DOC, or DOCX. Maximum 5MB.</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit application</button>
+        <p id="application-message" class="review-message" role="status"></p>
+      </form>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <a href="index.html" class="footer-logo" aria-label="J&co. Home">
+      <img src="assets/logo.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" />
+      <span class="logo-text">J&co.</span>
+    </a>
+    <p class="footer-copy">&copy; <span id="year"></span> J&co. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const applicationModal = document.getElementById('application-modal');
+    const applicationForm = document.getElementById('application-form');
+    const applicationRole = document.getElementById('applicant-role');
+    const applicationMessage = document.getElementById('application-message');
+    const applicationButtons = document.querySelectorAll('.js-apply-btn');
+    const closeApplicationButtons = document.querySelectorAll('[data-close-application]');
+
+    function openApplication(role) {
+      applicationRole.value = role || 'General application';
+      applicationMessage.textContent = '';
+      applicationModal.hidden = false;
+      document.body.classList.add('modal-open');
+      document.getElementById('applicant-name').focus();
+    }
+
+    function closeApplication() {
+      applicationModal.hidden = true;
+      document.body.classList.remove('modal-open');
+    }
+
+    applicationButtons.forEach((button) => {
+      button.addEventListener('click', () => openApplication(button.dataset.role));
+    });
+
+    closeApplicationButtons.forEach((button) => {
+      button.addEventListener('click', closeApplication);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !applicationModal.hidden) closeApplication();
+    });
+
+    applicationForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      applicationMessage.textContent = '';
+
+      const submitBtn = applicationForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch('/api/careers/apply', {
+          method: 'POST',
+          body: new FormData(applicationForm)
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.error || 'Failed to submit application.');
+
+        applicationForm.reset();
+        applicationMessage.textContent = 'Application submitted successfully.';
+      } catch (error) {
+        applicationMessage.textContent = error.message || 'Failed to submit application.';
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -125,6 +125,10 @@ img {
   color: var(--text);
 }
 
+.nav a[aria-current="page"] {
+  color: var(--text);
+}
+
 /* Main */
 main {
   max-width: 42rem;
@@ -188,6 +192,7 @@ main {
   font-size: 0.9375rem;
   font-weight: 500;
   border-radius: 6px;
+  cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
@@ -582,6 +587,162 @@ main {
   border-color: var(--highlight);
 }
 
+/* Careers */
+.careers-hero {
+  margin-bottom: 4rem;
+}
+
+.careers-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.career-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.career-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.career-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+.career-card .career-type {
+  margin-bottom: 0.45rem;
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.values-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.application-panel {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-elevated);
+}
+
+.application-panel p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+.application-link {
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.application-modal[hidden] {
+  display: none;
+}
+
+.application-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.application-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.application-dialog {
+  position: relative;
+  width: min(38rem, 100%);
+  max-height: min(90vh, 48rem);
+  overflow: auto;
+  padding: 1.35rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+}
+
+.application-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.application-dialog-header .hero-tag {
+  margin-bottom: 0.4rem;
+}
+
+.application-dialog-header h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.application-close {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #0d0d12;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.application-form {
+  display: grid;
+}
+
+.application-field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.application-form .btn[disabled] {
+  cursor: wait;
+  opacity: 0.65;
+}
+
 /* Services grid */
 .services-grid {
   list-style: none;
@@ -687,6 +848,7 @@ main {
 }
 
 .field-row input,
+.field-row select,
 .field-row textarea {
   width: 100%;
   border: 1px solid var(--border);
@@ -699,6 +861,11 @@ main {
 
 .field-row textarea {
   resize: vertical;
+}
+
+.field-help {
+  color: var(--text-muted);
+  font-size: 0.78rem;
 }
 
 .rating-stars {
@@ -1014,6 +1181,19 @@ main {
   .btn {
     width: 100%;
     text-align: center;
+  }
+
+  .career-card {
+    grid-template-columns: 1fr;
+  }
+
+  .application-field-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .application-dialog {
+    padding: 1rem;
   }
 
   .clients-wrap {
