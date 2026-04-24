@@ -92,6 +92,13 @@ function hasResendConfig() {
   return Boolean(process.env.RESEND_API_KEY && process.env.RESEND_FROM_EMAIL);
 }
 
+function normalizeEmailAddress(value) {
+  const trimmed = String(value || '').trim();
+  const match = trimmed.match(/^(.+?)\s*<([^<>@\s]+@[^<>@\s]+\.[^<>@\s]+)>$/);
+  if (!match) return trimmed;
+  return `${match[1].trim().replace(/^["']|["']$/g, '')} <${match[2]}>`;
+}
+
 function createMailTransport() {
   return nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -130,7 +137,7 @@ async function sendCareerApplicationEmail({ name, email, phone, role, experience
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: process.env.RESEND_FROM_EMAIL,
+        from: normalizeEmailAddress(process.env.RESEND_FROM_EMAIL),
         to: [CAREERS_TO_EMAIL],
         reply_to: email,
         subject,
