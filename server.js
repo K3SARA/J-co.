@@ -3,6 +3,7 @@ const fs = require('fs');
 const multer = require('multer');
 const nodemailer = require('nodemailer');
 const path = require('path');
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 require('dotenv').config();
 
 const app = express();
@@ -319,6 +320,57 @@ app.post('/api/careers/apply', handleCareerUpload, async (req, res) => {
       return res.status(504).json({ error: 'Email server connection timed out. SMTP may be blocked on the deployed server.' });
     }
     return res.status(500).json({ error: error.message || 'Failed to submit application.' });
+  }
+});
+
+// Chatbot API Endpoint
+const systemPrompt = `You are a helpful customer support AI for J&co Software Solutions.
+You must adhere strictly to the following knowledge base:
+
+1. Services: We build tailored solutions—apps and software designed around the business and customers' needs. We can build ANY kind of software products and websites for visitors.
+2. Cloud Database Subscription Costs:
+  - Small Business – 500 LKR Per month
+  - Intermediate Business – 1500 - 2000 LKR Per month
+  - Enterprise Business – 5,000 LKR Per month
+3. Software License & Service Agreement Policies:
+  - License: Non-transferable license for internal business operations. The software remains the intellectual property of J&co.
+  - Payment Terms: 50% advance before installation, 50% upon completion/handover. Net 7 days from invoice date for monthly services. Services suspended if 5 days past due date.
+  - Refund Policy: Strict NO REFUND policy. All sales, contracts, and payments for software development, integrations, and licenses are final and non-refundable. Exception only if J&co completely fails to deliver core functionality.
+  - Subscriptions: Cancellations require 14 days written notice.
+4. Contact Info: 
+  - Email: hello@jnco.tech
+  - Web: www.jnco.tech
+  - Phone: +94 77 065 4279
+  - Address: N0 36A Agalawatta Road, Matale
+
+Answer concisely, professionally, and warmly. If asked a question not covered here, state that you don't have that specific information and provide the contact email/phone number.`;
+
+app.post('/api/chat', async (req, res) => {
+  try {
+    const userMessage = req.body.message;
+    if (!userMessage) {
+      return res.status(400).json({ error: 'Message is required' });
+    }
+
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      return res.status(503).json({ error: 'Chat service is temporarily unavailable.' });
+    }
+
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({
+      model: 'gemini-2.5-flash',
+      systemInstruction: systemPrompt
+    });
+
+    const result = await model.generateContent(userMessage);
+    const response = await result.response;
+    const text = response.text();
+
+    return res.json({ reply: text });
+  } catch (error) {
+    console.error('Chat API Error:', error);
+    return res.status(500).json({ error: 'Failed to process chat message' });
   }
 });
 

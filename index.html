@@ -31,40 +31,78 @@
 
   <main>
     <section class="hero">
-      
-      <p class="hero-tag">Software company</p>
-      <h1 class="hero-title">Customized apps and software for what you need.</h1>
-      <p class="hero-desc">We build tailored solutions—apps and software designed around your business and your customers’ needs.</p>
-      <a href="#contact" class="btn btn-primary">Get in touch</a>
+      <div class="hero-waves" aria-hidden="true"></div>
+      <div class="hero-blob" aria-hidden="true">
+        <img src="assets/hero_rotate.png" alt="" />
+      </div>
+      <div class="hero-content">
+        <p class="hero-tag">Software company</p>
+        <h1 class="hero-title">Customized apps and software for what you need.</h1>
+        <p class="hero-desc">We build tailored solutions—apps and software designed around your business and your customers’ needs.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get in touch</a>
+          <div class="hero-social">
+            <a href="https://web.facebook.com/jncosoftware" class="social-icon" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram" onclick="showComingSoonModal(event)">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.39C1.35 2.68.94 3.36.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.32 1.35 20.65.94 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0Zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84Zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.41-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0Z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Twitter" onclick="showComingSoonModal(event)">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.72 1.04 4.28 4.28 0 0 0-7.29 3.9A12.14 12.14 0 0 1 3.15 4.9a4.28 4.28 0 0 0 1.32 5.71c-.7-.02-1.36-.21-1.94-.53v.05a4.28 4.28 0 0 0 3.43 4.2c-.65.18-1.33.2-2 .08a4.29 4.29 0 0 0 4 2.97A8.6 8.6 0 0 1 2 19.54a12.13 12.13 0 0 0 6.56 1.92c7.87 0 12.18-6.52 12.18-12.18 0-.19 0-.37-.01-.55A8.66 8.66 0 0 0 22.46 6Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="work" class="section-work">
-      <h2 class="section-label">Work</h2>
-      <p class="section-intro">Custom solutions we’ve designed and built for real businesses.</p>
-      <ul class="work-list">
-        <li class="work-item">
-          <span class="work-name">Platform &amp; APIs</span>
-          <span class="work-detail">Backend systems, integrations, and scalable infrastructure.</span>
-        </li>
-        <li class="work-item">
-          <span class="work-name">Web &amp; product</span>
-          <span class="work-detail">Web apps and product experiences that people enjoy using.</span>
-        </li>
-        <li class="work-item">
-          <span class="work-name">Consulting</span>
-          <span class="work-detail">Architecture, audits, and guidance for existing systems.</span>
-        </li>
-        <li class="work-item">
-          <span class="work-name">Websites</span>
-          <span class="work-detail">Minimalized and full integrated websites for you growing Business.</span>
-        </li>
-        <li class="work-item">
-          <span class="work-name">Mobile Apps</span>
-          <span class="work-detail">Customized Mobile apps that supports Ios / Android</span>
-        </li>
-      </ul>
+      <div class="work-panel">
+        <div class="work-intro">
+          <h2 class="section-label section-label--accent">Work</h2>
+          <p class="section-intro work-heading">Custom solutions we&rsquo;ve designed and built for real <span class="text-gradient">businesses</span>.</p>
+        </div>
+        <ul class="work-grid">
+          <li class="work-card">
+            <span class="work-icon work-icon--c1" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 17 3 12l5-5M16 7l5 5-5 5" /></svg>
+            </span>
+            <h3 class="work-card-title">Platform &amp; APIs</h3>
+            <p class="work-card-desc">Backend systems, integrations, and scalable infrastructure.</p>
+          </li>
+          <li class="work-card">
+            <span class="work-icon work-icon--c2" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
+            </span>
+            <h3 class="work-card-title">Web &amp; product</h3>
+            <p class="work-card-desc">Web apps and product experiences that people enjoy using.</p>
+          </li>
+          <li class="work-card">
+            <span class="work-icon work-icon--c3" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10.472c.667.61 1 1.528 1 2.528h6c0-1 .333-1.917 1-2.528A6 6 0 0 0 12 2Z" /></svg>
+            </span>
+            <h3 class="work-card-title">Consulting</h3>
+            <p class="work-card-desc">Architecture, audits, and guidance for existing systems.</p>
+          </li>
+          <li class="work-card">
+            <span class="work-icon work-icon--c4" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" /></svg>
+            </span>
+            <h3 class="work-card-title">Websites</h3>
+            <p class="work-card-desc">Minimalized and full integrated websites for you growing Business.</p>
+          </li>
+          <li class="work-card">
+            <span class="work-icon work-icon--c5" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2" /><path d="M11 18h2" /></svg>
+            </span>
+            <h3 class="work-card-title">Mobile Apps</h3>
+            <p class="work-card-desc">Customized Mobile apps that supports Ios / Android</p>
+          </li>
+        </ul>
+      </div>
+
       <div class="portfolio-title">
-       <h2 class="section-label">Portfolio</h2>
+       <h2 class="section-label section-label--accent">Portfolio</h2>
       <p class="section-intro">Swipe or click through project cards with smooth animated transitions.</p>
     </div>
     </section>
@@ -625,7 +663,132 @@
     renderStarPicker(5);
     loadReviews();
   })();
+
+  function showComingSoonModal(e) {
+    if (e) e.preventDefault();
+    const modal = document.getElementById('customModal');
+    if (modal) {
+      modal.classList.add('visible');
+    }
+  }
+
+  function hideCustomModal() {
+    const modal = document.getElementById('customModal');
+    if (modal) {
+      modal.classList.remove('visible');
+    }
+  }
 </script>
+
+<!-- AI Chatbot HTML -->
+<button id="chatToggle" class="chat-toggle-btn" aria-label="Open Chat">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</button>
+
+<div id="chatWindow" class="chat-window">
+  <div class="chat-header">
+    <h3>J&co AI Assistant</h3>
+    <button id="chatClose" class="chat-close-btn">&times;</button>
+  </div>
+  <div id="chatMessages" class="chat-messages">
+    <div class="chat-bubble bot">Hello! I'm the J&co AI assistant. How can I help you today?</div>
+  </div>
+  <div class="chat-input-area">
+    <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off" />
+    <button id="chatSend" class="chat-send-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  // --- AI Chatbot Logic ---
+  const chatToggle = document.getElementById('chatToggle');
+  const chatWindow = document.getElementById('chatWindow');
+  const chatClose = document.getElementById('chatClose');
+  const chatMessages = document.getElementById('chatMessages');
+  const chatInput = document.getElementById('chatInput');
+  const chatSend = document.getElementById('chatSend');
+
+  if (chatToggle) {
+    chatToggle.addEventListener('click', () => {
+      chatWindow.classList.toggle('visible');
+      if (chatWindow.classList.contains('visible')) {
+        chatInput.focus();
+      }
+    });
+
+    chatClose.addEventListener('click', () => {
+      chatWindow.classList.remove('visible');
+    });
+
+    function addMessage(text, isUser = false) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `chat-bubble ${isUser ? 'user' : 'bot'}`;
+      msgDiv.textContent = text;
+      chatMessages.appendChild(msgDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    async function handleSend() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+
+      addMessage(text, true);
+      chatInput.value = '';
+      chatInput.disabled = true;
+      chatSend.disabled = true;
+
+      const loadingDiv = document.createElement('div');
+      loadingDiv.className = 'chat-bubble bot loading';
+      loadingDiv.textContent = 'Typing...';
+      chatMessages.appendChild(loadingDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      try {
+        const res = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text })
+        });
+        const data = await res.json();
+        loadingDiv.remove();
+
+        if (res.ok) {
+          addMessage(data.reply, false);
+        } else {
+          addMessage('Sorry, I am having trouble connecting to the server. ' + (data.error || ''), false);
+        }
+      } catch (error) {
+        loadingDiv.remove();
+        addMessage('Network error. Please try again later.', false);
+      } finally {
+        chatInput.disabled = false;
+        chatSend.disabled = false;
+        chatInput.focus();
+      }
+    }
+
+    chatSend.addEventListener('click', handleSend);
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        handleSend();
+      }
+    });
+  }
+</script>
+
+<div id="customModal" class="custom-modal-overlay" onclick="if(event.target === this) hideCustomModal()">
+  <div class="custom-modal-content">
+    <button class="custom-modal-close" onclick="hideCustomModal()">&times;</button>
+    <div class="custom-modal-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+    </div>
+    <h3 class="custom-modal-title">Coming Soon!</h3>
+    <p class="custom-modal-text">We are working hard to bring this feature to you. Stay tuned for updates!</p>
+    <button class="btn btn-primary" onclick="hideCustomModal()" style="width: 100%;">Got it</button>
+  </div>
+</div>
 
 </body>
 </html>
