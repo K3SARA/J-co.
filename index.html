@@ -722,10 +722,22 @@
       chatWindow.classList.remove('visible');
     });
 
+    function formatBotMessage(text) {
+      return text
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/\n/g, '<br>');
+    }
+
     function addMessage(text, isUser = false) {
       const msgDiv = document.createElement('div');
       msgDiv.className = `chat-bubble ${isUser ? 'user' : 'bot'}`;
-      msgDiv.textContent = text;
+      if (isUser) {
+        msgDiv.textContent = text;
+      } else {
+        msgDiv.innerHTML = formatBotMessage(text);
+      }
       chatMessages.appendChild(msgDiv);
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
