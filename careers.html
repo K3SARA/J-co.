@@ -46,10 +46,7 @@
 
   <main>
     <section class="hero careers-hero">
-      <div class="hero-waves" aria-hidden="true"></div>
-      <div class="hero-blob" aria-hidden="true">
-        <img src="assets/hero_rotate.png" alt="" />
-      </div>
+      <canvas id="particle-canvas" class="hero-canvas"></canvas>
       <div class="hero-content">
         <p class="hero-tag">Careers</p>
         <h1 class="hero-title">Build practical software with a small, focused team.</h1>
@@ -261,5 +258,9 @@
       }
     });
   </script>
+  
+  <!-- Three.js for 3D Particle Background -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/particle-animation.js"></script>
 </body>
 </html>
