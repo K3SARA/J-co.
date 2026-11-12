@@ -1,0 +1,18 @@
+{
+  "reviews": [
+    {
+      "id": "1771521772078-i1mp81",
+      "name": "Ravin Chandimal",
+      "text": "I Bought a booking app for my Salon.and it works so smoothly than I think.Great!",
+      "rating": 5,
+      "createdAt": 1771521772078
+    },
+    {
+      "id": "1740000000000-mayura",
+      "name": "Mayura Manathunga",
+      "text": "Great Service and after service,They Handle problems and issues instantly.Thank you J&co.",
+      "rating": 5,
+      "createdAt": 1740000000000
+    }
+  ]
+}
