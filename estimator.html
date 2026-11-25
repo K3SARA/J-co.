@@ -1,217 +1,369 @@
-<!-- Interactive Scope & Cost Estimator Section -->
-<section id="estimator" class="py-16 px-4 max-w-5xl mx-auto">
-  <div class="text-center mb-10">
-    <h2 class="text-3xl font-extrabold text-gray-900 tracking-tight">Software Project Estimator</h2>
-    <p class="text-gray-600 mt-2">Select your project parameters to get an instant scope and ballpark budget estimate.</p>
-  </div>
-
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-    <!-- Controls Column -->
-    <div class="lg:col-span-2 space-y-8 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-      
-      <!-- 1. Platform Type -->
-      <div>
-        <label class="block text-sm font-semibold text-gray-800 mb-3">1. Select Project Type</label>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="platformGroup">
-          <button type="button" data-type="platform" data-cost="1500" data-weeks="4" class="selector-btn border-2 border-indigo-600 bg-indigo-50/50 p-4 rounded-xl text-left transition active-choice">
-            <span class="block font-medium text-gray-900">Custom Web Application</span>
-            <span class="text-xs text-gray-500">Node/Express, React, Modern SPA</span>
-          </button>
-          <button type="button" data-type="platform" data-cost="2200" data-weeks="6" class="selector-btn border border-gray-200 p-4 rounded-xl text-left transition hover:border-indigo-300">
-            <span class="block font-medium text-gray-900">Mobile Application</span>
-            <span class="text-xs text-gray-500">Cross-platform iOS & Android</span>
-          </button>
-          <button type="button" data-type="platform" data-cost="2800" data-weeks="6" class="selector-btn border border-gray-200 p-4 rounded-xl text-left transition hover:border-indigo-300">
-            <span class="block font-medium text-gray-900">POS & Inventory System</span>
-            <span class="text-xs text-gray-500">Offline-first, receipts, dashboards</span>
-          </button>
-          <button type="button" data-type="platform" data-cost="3500" data-weeks="8" class="selector-btn border border-gray-200 p-4 rounded-xl text-left transition hover:border-indigo-300">
-            <span class="block font-medium text-gray-900">Enterprise Backend & API</span>
-            <span class="text-xs text-gray-500">Scalable microservices, integrations</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- 2. UI/UX Scope -->
-      <div>
-        <label class="block text-sm font-semibold text-gray-800 mb-3">2. UI/UX Design Level</label>
-        <div class="grid grid-cols-3 gap-3" id="uiGroup">
-          <button type="button" data-type="ui" data-cost="400" data-weeks="1" class="selector-btn border-2 border-indigo-600 bg-indigo-50/50 p-3 rounded-xl text-center active-choice">
-            <span class="block text-sm font-medium text-gray-900">Clean & Standard</span>
-          </button>
-          <button type="button" data-type="ui" data-cost="900" data-weeks="2" class="selector-btn border border-gray-200 p-3 rounded-xl text-center hover:border-indigo-300">
-            <span class="block text-sm font-medium text-gray-900">Custom Brand UI</span>
-          </button>
-          <button type="button" data-type="ui" data-cost="1600" data-weeks="3" class="selector-btn border border-gray-200 p-3 rounded-xl text-center hover:border-indigo-300">
-            <span class="block text-sm font-medium text-gray-900">High-End Motion/System</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- 3. Key Feature Modules -->
-      <div>
-        <label class="block text-sm font-semibold text-gray-800 mb-3">3. Functional Modules</label>
-        <div class="space-y-2">
-          <label class="flex items-center justify-between p-3 border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50">
-            <div class="flex items-center space-x-3">
-              <input type="checkbox" class="feature-checkbox h-4 w-4 text-indigo-600 rounded" data-cost="450" data-weeks="1" checked>
-              <span class="text-sm font-medium text-gray-800">User Authentication & Roles</span>
-            </div>
-            <span class="text-xs text-gray-500">+$450</span>
-          </label>
-          <label class="flex items-center justify-between p-3 border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50">
-            <div class="flex items-center space-x-3">
-              <input type="checkbox" class="feature-checkbox h-4 w-4 text-indigo-600 rounded" data-cost="600" data-weeks="1">
-              <span class="text-sm font-medium text-gray-800">Payment Gateway Integration</span>
-            </div>
-            <span class="text-xs text-gray-500">+$600</span>
-          </label>
-          <label class="flex items-center justify-between p-3 border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50">
-            <div class="flex items-center space-x-3">
-              <input type="checkbox" class="feature-checkbox h-4 w-4 text-indigo-600 rounded" data-cost="650" data-weeks="1">
-              <span class="text-sm font-medium text-gray-800">Analytics & Reporting Dashboard</span>
-            </div>
-            <span class="text-xs text-gray-500">+$650</span>
-          </label>
-          <label class="flex items-center justify-between p-3 border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50">
-            <div class="flex items-center space-x-3">
-              <input type="checkbox" class="feature-checkbox h-4 w-4 text-indigo-600 rounded" data-cost="850" data-weeks="1.5">
-              <span class="text-sm font-medium text-gray-800">Custom AI / LLM Workflow Integration</span>
-            </div>
-            <span class="text-xs text-gray-500">+$850</span>
-          </label>
-        </div>
-      </div>
-    </div>
-
-    <!-- Live Estimate & Inquiry Summary -->
-    <div class="space-y-6">
-      <div class="bg-gray-900 text-white p-6 rounded-2xl shadow-lg flex flex-col justify-between">
-        <div>
-          <span class="text-xs uppercase tracking-wider text-indigo-400 font-semibold">Estimated Scope</span>
-          <div class="mt-4 flex items-baseline">
-            <span class="text-4xl font-extrabold tracking-tight" id="costDisplay">$2,350</span>
-            <span class="ml-2 text-sm text-gray-400">USD (est.)</span>
-          </div>
-          <div class="mt-2 text-sm text-gray-300 flex items-center space-x-2">
-            <span>⏱ Expected Delivery:</span>
-            <span class="font-semibold text-white" id="durationDisplay">5 - 6 Weeks</span>
-          </div>
-        </div>
-
-        <div class="mt-6 pt-6 border-t border-gray-800">
-          <p class="text-xs text-gray-400 leading-relaxed">
-            Estimates represent standard development sprints at J&co. Scope includes QA testing, responsive design, and launch support.
-          </p>
-        </div>
-      </div>
-
-      <!-- Lead Capture Form -->
-      <form id="estimatorForm" class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-4">
-        <h3 class="text-sm font-bold text-gray-900">Request Formal Proposal</h3>
-        <div>
-          <input type="text" id="clientName" placeholder="Your Name" required class="w-full text-sm p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-        </div>
-        <div>
-          <input type="email" id="clientEmail" placeholder="Work Email" required class="w-full text-sm p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-        </div>
-        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm py-3 px-4 rounded-xl transition shadow">
-          Send Specification to J&co.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Cost &amp; Scope Estimator | J&amp;co.</title>
+  <meta name="description" content="Estimate the scope and cost of your software project in Sri Lankan Rupees with J&co.'s free project estimator." />
+  <link rel="canonical" href="https://www.jnco.tech/estimator.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/title.png" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="logo" aria-label="J&co. Home">
+      <img src="assets/logo.png" alt="J&co. Software Solutions Logo" width="100" height="25" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <span class="logo-text" aria-hidden="true">J&co.</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="site-navigation">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="index.html#demos">Demos</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#clients">Clients</a>
+      <a href="index.html#reviews">Reviews</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="free-tools-menu" aria-current="page">
+          Free tools <span class="nav-chevron" aria-hidden="true"></span>
         </button>
-        <p id="formStatus" class="text-xs text-center hidden"></p>
-      </form>
-    </div>
-  </div>
-</section>
+        <ul class="nav-dropdown-menu" id="free-tools-menu" hidden>
+          <li><a href="estimator.html" aria-current="page">Cost Estimator</a></li>
+        </ul>
+      </div>
+      <a href="careers.html">Careers</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
 
-<!-- Logic Script -->
-<script>
-  let selectedPlatform = { cost: 1500, weeks: 4, name: 'Custom Web Application' };
-  let selectedUI = { cost: 400, weeks: 1, name: 'Clean & Standard' };
+  <main class="estimator-page">
+    <section id="estimator" class="section estimator-section">
+      <h1 class="section-label">Cost &amp; Scope Estimator</h1>
+      <p class="section-intro estimator-intro">Shape your project scope and get a live, ballpark estimate for your software build.</p>
 
-  function setupSingleSelect(groupId, callback) {
-    const group = document.getElementById(groupId);
-    const buttons = group.querySelectorAll('button');
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => {
-          b.classList.remove('border-2', 'border-indigo-600', 'bg-indigo-50/50', 'active-choice');
-          b.classList.add('border', 'border-gray-200');
+      <fieldset class="estimator-business-tier">
+        <legend>Business scale</legend>
+        <div class="estimator-toggle" id="estimator-business-tiers" role="group" aria-label="Business scale">
+          <button type="button" class="estimator-toggle-choice is-selected" data-business-tier="sme" aria-pressed="true">SME / Single Branch</button>
+          <button type="button" class="estimator-toggle-choice" data-business-tier="corporate" aria-pressed="false">Corporate / Multi-Branch</button>
+        </div>
+      </fieldset>
+
+      <div class="estimator-grid">
+        <div class="estimator-controls">
+          <fieldset class="estimator-group">
+            <legend>1. Project Type</legend>
+            <div class="estimator-options estimator-options--projects" id="estimator-project-types">
+              <button type="button" class="estimator-choice is-selected" data-estimator-choice="project" data-name="Custom Web App / Portal" data-sme-cost="280000" data-sme-weeks="4" data-corporate-cost="600000" data-corporate-weeks="7" aria-pressed="true">
+                <span class="estimator-choice-title">Custom Web App / Portal</span>
+                <span class="estimator-choice-note">Admin console, CRUD workflows, order management &amp; reporting.</span>
+                <span class="estimator-choice-pricing"></span>
+              </button>
+              <button type="button" class="estimator-choice" data-estimator-choice="project" data-name="Mobile App (Cross-Platform)" data-sme-cost="390000" data-sme-weeks="6" data-corporate-cost="725000" data-corporate-weeks="8" aria-pressed="false">
+                <span class="estimator-choice-title">Mobile App (Cross-Platform)</span>
+                <span class="estimator-choice-note">React Native / Flutter customer or field sales app, offline sync.</span>
+                <span class="estimator-choice-pricing"></span>
+              </button>
+              <button type="button" class="estimator-choice" data-estimator-choice="project" data-name="POS &amp; Inventory System" data-sme-cost="250000" data-sme-weeks="4" data-corporate-cost="450000" data-corporate-weeks="6" aria-pressed="false">
+                <span class="estimator-choice-title">POS &amp; Inventory System</span>
+                <span class="estimator-choice-note">Counter billing, ESC/POS thermal printing, barcode &amp; stock ledger.</span>
+                <span class="estimator-choice-pricing"></span>
+              </button>
+              <button type="button" class="estimator-choice" data-estimator-choice="project" data-name="Enterprise Backend Services" data-sme-cost="450000" data-sme-weeks="6" data-corporate-cost="925000" data-corporate-weeks="9" aria-pressed="false">
+                <span class="estimator-choice-title">Enterprise Backend Services</span>
+                <span class="estimator-choice-note">Warehouse logistics, van sale sync, legacy accounting bridge APIs.</span>
+                <span class="estimator-choice-pricing"></span>
+              </button>
+            </div>
+          </fieldset>
+
+          <fieldset class="estimator-group">
+            <legend>2. UI/UX Tier</legend>
+            <div class="estimator-options estimator-options--tiers" id="estimator-ui-tiers">
+              <button type="button" class="estimator-choice is-selected" data-estimator-choice="design" data-name="Clean &amp; Modern" data-cost="0" data-weeks="0" aria-pressed="true">
+                <span class="estimator-choice-title">Clean &amp; Modern</span>
+                <span class="estimator-choice-note">Tailwind/Shadcn responsive UI, Sinhala/Tamil/English ready.</span>
+                <span class="estimator-choice-pricing">Included (LKR 0) · +0 weeks</span>
+              </button>
+              <button type="button" class="estimator-choice" data-estimator-choice="design" data-name="Custom Brand UI" data-cost="50000" data-weeks="1" aria-pressed="false">
+                <span class="estimator-choice-title">Custom Brand UI</span>
+                <span class="estimator-choice-note">Full Figma wireframing, brand colors, custom icon pack.</span>
+                <span class="estimator-choice-pricing">+ LKR 50,000 · +1 week</span>
+              </button>
+              <button type="button" class="estimator-choice" data-estimator-choice="design" data-name="High-End Motion" data-cost="90000" data-weeks="2" aria-pressed="false">
+                <span class="estimator-choice-title">High-End Motion</span>
+                <span class="estimator-choice-note">Interactive dashboards, micro-interactions, animated indicators.</span>
+                <span class="estimator-choice-pricing">+ LKR 90,000 · +2 weeks</span>
+              </button>
+            </div>
+          </fieldset>
+
+          <fieldset class="estimator-group">
+            <legend>3. Key Add-on Modules</legend>
+            <div class="estimator-addons">
+              <label class="estimator-addon">
+                <span class="estimator-addon-description">
+                  <span class="estimator-addon-name"><input type="checkbox" class="estimator-addon-input" data-name="Auth &amp; RBAC" data-cost="35000" data-weeks="1" checked /> Auth &amp; RBAC</span>
+                  <span class="estimator-choice-note">Owner/Cashier/Stock roles, Notify.lk / Dialog / Mobitel SMS OTP, audit logs.</span>
+                </span>
+                <span class="estimator-addon-price">+ LKR 35,000 · +1 week</span>
+              </label>
+              <label class="estimator-addon">
+                <span class="estimator-addon-description">
+                  <span class="estimator-addon-name"><input type="checkbox" class="estimator-addon-input" data-name="Local Payment Gateway" data-cost="55000" data-weeks="1" /> Local Payment Gateway</span>
+                  <span class="estimator-choice-note">PayHere, WebXpay, Genie, Commercial/Sampath Bank IPG, PDF receipts.</span>
+                </span>
+                <span class="estimator-addon-price">+ LKR 55,000 · +1 week</span>
+              </label>
+              <label class="estimator-addon">
+                <span class="estimator-addon-description">
+                  <span class="estimator-addon-name"><input type="checkbox" class="estimator-addon-input" data-name="Analytics &amp; BI" data-cost="60000" data-weeks="1" /> Analytics &amp; BI</span>
+                  <span class="estimator-choice-note">Sales metrics, high-margin alerts, one-click Excel/CSV tax export.</span>
+                </span>
+                <span class="estimator-addon-price">+ LKR 60,000 · +1 week</span>
+              </label>
+              <label class="estimator-addon">
+                <span class="estimator-addon-description">
+                  <span class="estimator-addon-name"><input type="checkbox" class="estimator-addon-input" data-name="AI / LLM Workflow" data-cost="110000" data-weeks="1.5" /> AI / LLM Workflow</span>
+                  <span class="estimator-choice-note">WhatsApp Business automated inquiry bot &amp; inventory recommendation engine.</span>
+                </span>
+                <span class="estimator-addon-price">+ LKR 110,000 · +1.5 weeks</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="estimator-summary">
+          <div class="estimator-total" aria-live="polite">
+            <fieldset class="estimator-pricing-model">
+              <legend>Pricing model</legend>
+              <div class="estimator-toggle estimator-toggle--vertical" id="estimator-pricing-models" role="group" aria-label="Pricing model">
+                <button type="button" class="estimator-toggle-choice is-selected" data-pricing-model="standard" aria-pressed="true">Standard Build (Milestone-Based)</button>
+                <button type="button" class="estimator-toggle-choice" data-pricing-model="amc" aria-pressed="false">Low Upfront Setup + Monthly AMC</button>
+              </div>
+            </fieldset>
+            <span class="estimator-eyebrow">Estimated Project Cost</span>
+            <p class="estimator-cost" id="estimator-cost">LKR 315,000</p>
+            <span class="estimator-currency" id="estimator-cost-caption">Total = Base + UI + Add-ons</span>
+            <ul class="estimator-milestones" id="estimator-milestones" aria-label="Milestone payment breakdown"></ul>
+            <div class="estimator-amc-details" id="estimator-amc-details" hidden>
+              <p>Includes managed VPS hosting, daily offsite backups, security updates &amp; WhatsApp support.</p>
+            </div>
+            <div class="estimator-duration">
+              <span>Estimated delivery</span>
+              <strong id="estimator-duration">5 weeks</strong>
+            </div>
+            <p class="estimator-disclaimer">Final scope, timeline, and pricing are confirmed after a consultation.</p>
+          </div>
+
+          <form id="estimator-form" class="estimator-lead-form">
+            <h2>Request a formal proposal</h2>
+            <div class="field-row">
+              <label for="estimator-name">Name</label>
+              <input id="estimator-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field-row">
+              <label for="estimator-email">Work Email</label>
+              <input id="estimator-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <button type="submit" class="btn btn-primary estimator-submit">Send Specification to J&amp;co.</button>
+            <p id="estimator-status" class="estimator-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="index.html" class="footer-logo" aria-label="J&co. Home">
+      <img src="assets/logo.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" />
+      <span class="logo-text">J&co.</span>
+    </a>
+    <p class="footer-copy">&copy; <span id="year"></span> J&co. All rights reserved.</p>
+  </footer>
+
+  <script src="assets/navigation.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (() => {
+      const estimator = document.getElementById('estimator');
+      const form = estimator.querySelector('#estimator-form');
+      const status = estimator.querySelector('#estimator-status');
+      const businessTierChoices = estimator.querySelectorAll('[data-business-tier]');
+      const pricingModelChoices = estimator.querySelectorAll('[data-pricing-model]');
+      const projectChoices = estimator.querySelectorAll('[data-estimator-choice="project"]');
+      const designChoices = estimator.querySelectorAll('[data-estimator-choice="design"]');
+      const addons = estimator.querySelectorAll('.estimator-addon-input');
+      const costDisplay = estimator.querySelector('#estimator-cost');
+      const costCaption = estimator.querySelector('#estimator-cost-caption');
+      const durationDisplay = estimator.querySelector('#estimator-duration');
+      const milestonesDisplay = estimator.querySelector('#estimator-milestones');
+      const amcDetails = estimator.querySelector('#estimator-amc-details');
+      let selectedProject = projectChoices[0];
+      let selectedDesign = designChoices[0];
+      let businessTier = 'sme';
+      let pricingModel = 'standard';
+
+      function selectChoice(choices, selected) {
+        choices.forEach((choice) => {
+          const isSelected = choice === selected;
+          choice.classList.toggle('is-selected', isSelected);
+          choice.setAttribute('aria-pressed', String(isSelected));
         });
-        btn.classList.add('border-2', 'border-indigo-600', 'bg-indigo-50/50', 'active-choice');
-        btn.classList.remove('border-gray-200');
-        callback({
-          cost: parseFloat(btn.dataset.cost),
-          weeks: parseFloat(btn.dataset.weeks),
-          name: btn.querySelector('.font-medium').innerText
-        });
-        recalculate();
-      });
-    });
-  }
-
-  setupSingleSelect('platformGroup', (val) => selectedPlatform = val);
-  setupSingleSelect('uiGroup', (val) => selectedUI = val);
-
-  document.querySelectorAll('.feature-checkbox').forEach(cb => {
-    cb.addEventListener('change', recalculate);
-  });
-
-  function recalculate() {
-    let totalCost = selectedPlatform.cost + selectedUI.cost;
-    let totalWeeks = selectedPlatform.weeks + selectedUI.weeks;
-
-    document.querySelectorAll('.feature-checkbox:checked').forEach(cb => {
-      totalCost += parseFloat(cb.dataset.cost);
-      totalWeeks += parseFloat(cb.dataset.weeks);
-    });
-
-    document.getElementById('costDisplay').innerText = '$' + totalCost.toLocaleString();
-    const minWeeks = Math.floor(totalWeeks);
-    const maxWeeks = minWeeks + 1;
-    document.getElementById('durationDisplay').innerText = `${minWeeks} - ${maxWeeks} Weeks`;
-  }
-
-  // Handle Form Submission to your Express backend
-  document.getElementById('estimatorForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const status = document.getElementById('formStatus');
-    status.className = 'text-xs text-center block text-gray-500';
-    status.innerText = 'Transmitting estimation...';
-
-    const selectedFeatures = [];
-    document.querySelectorAll('.feature-checkbox:checked').forEach(cb => {
-      selectedFeatures.push(cb.closest('label').querySelector('.text-sm').innerText);
-    });
-
-    const payload = {
-      name: document.getElementById('clientName').value,
-      email: document.getElementById('clientEmail').value,
-      platform: selectedPlatform.name,
-      design: selectedUI.name,
-      features: selectedFeatures,
-      estimatedCost: document.getElementById('costDisplay').innerText,
-      estimatedDuration: document.getElementById('durationDisplay').innerText
-    };
-
-    try {
-      const res = await fetch('/api/estimate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      if (res.ok) {
-        status.className = 'text-xs text-center block text-emerald-600 font-medium';
-        status.innerText = 'Estimate sent! The J&co. team will reach out shortly.';
-        e.target.reset();
-      } else {
-        throw new Error('Failed to send');
       }
-    } catch (err) {
-      status.className = 'text-xs text-center block text-rose-600';
-      status.innerText = 'Could not submit. Reach us at hello@jnco.tech.';
-    }
-  });
 
-  recalculate();
-</script>
+      function formatCurrency(amount) {
+        return `LKR ${amount.toLocaleString('en-US')}`;
+      }
+
+      function updateProjectPricing() {
+        projectChoices.forEach((choice) => {
+          const cost = Number(choice.dataset[`${businessTier}Cost`]);
+          const weeks = Number(choice.dataset[`${businessTier}Weeks`]);
+          choice.querySelector('.estimator-choice-pricing').textContent =
+            `${formatCurrency(cost)} · ${weeks} ${weeks === 1 ? 'week' : 'weeks'}`;
+        });
+      }
+
+      function recalculate() {
+        const selectedAddons = Array.from(addons).filter((addon) => addon.checked);
+        const baseCost = Number(selectedProject.dataset[`${businessTier}Cost`]);
+        const baseWeeks = Number(selectedProject.dataset[`${businessTier}Weeks`]);
+        const totalCost = baseCost + Number(selectedDesign.dataset.cost) +
+          selectedAddons.reduce((total, addon) => total + Number(addon.dataset.cost), 0);
+        const totalWeeks = baseWeeks + Number(selectedDesign.dataset.weeks) +
+          selectedAddons.reduce((total, addon) => total + Number(addon.dataset.weeks), 0);
+        const formattedDuration = `${Number.isInteger(totalWeeks) ? totalWeeks : totalWeeks.toFixed(1)} weeks`;
+
+        durationDisplay.textContent = formattedDuration;
+        if (pricingModel === 'standard') {
+          costDisplay.textContent = formatCurrency(totalCost);
+          costCaption.textContent = 'Total = Base + UI + Add-ons';
+          milestonesDisplay.hidden = false;
+          amcDetails.hidden = true;
+
+          const milestoneAmounts = [
+            Math.round(totalCost * 0.3),
+            Math.round(totalCost * 0.3),
+            Math.round(totalCost * 0.3)
+          ];
+          milestoneAmounts.push(totalCost - milestoneAmounts.reduce((sum, amount) => sum + amount, 0));
+          const milestoneStages = [
+            ['30%', 'Mobilization'],
+            ['30%', 'Alpha'],
+            ['30%', 'UAT'],
+            ['10%', 'Go-Live']
+          ];
+          milestonesDisplay.replaceChildren(...milestoneStages.map(([percentage, stage], index) => {
+            const item = document.createElement('li');
+            const label = document.createElement('span');
+            const amount = document.createElement('strong');
+            label.textContent = `${percentage} ${stage}`;
+            amount.textContent = formatCurrency(milestoneAmounts[index]);
+            item.append(label, amount);
+            return item;
+          }));
+        } else {
+          costDisplay.textContent = 'LKR 150,000 Initial Setup';
+          costCaption.textContent = '+ LKR 18,000 / month · managed support & hosting';
+          milestonesDisplay.hidden = true;
+          amcDetails.hidden = false;
+        }
+      }
+
+      businessTierChoices.forEach((choice) => {
+        choice.addEventListener('click', () => {
+          businessTier = choice.dataset.businessTier;
+          selectChoice(businessTierChoices, choice);
+          updateProjectPricing();
+          recalculate();
+        });
+      });
+
+      pricingModelChoices.forEach((choice) => {
+        choice.addEventListener('click', () => {
+          pricingModel = choice.dataset.pricingModel;
+          selectChoice(pricingModelChoices, choice);
+          recalculate();
+        });
+      });
+
+      projectChoices.forEach((choice) => {
+        choice.addEventListener('click', () => {
+          selectedProject = choice;
+          selectChoice(projectChoices, choice);
+          recalculate();
+        });
+      });
+
+      designChoices.forEach((choice) => {
+        choice.addEventListener('click', () => {
+          selectedDesign = choice;
+          selectChoice(designChoices, choice);
+          recalculate();
+        });
+      });
+
+      addons.forEach((addon) => addon.addEventListener('change', recalculate));
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        status.textContent = '';
+        status.className = 'estimator-status';
+
+        const submitButton = form.querySelector('button[type="submit"]');
+        const selectedFeatures = Array.from(addons)
+          .filter((addon) => addon.checked)
+          .map((addon) => addon.dataset.name);
+        const payload = {
+          name: form.elements.name.value.trim(),
+          email: form.elements.email.value.trim(),
+          businessTier: businessTier === 'sme' ? 'SME / Single Branch' : 'Corporate / Multi-Branch',
+          pricingModel: pricingModel === 'standard'
+            ? 'Standard Build (Milestone-Based)'
+            : 'Low Upfront Setup + Monthly AMC',
+          platform: selectedProject.dataset.name,
+          design: selectedDesign.dataset.name,
+          features: selectedFeatures,
+          estimatedCost: pricingModel === 'standard'
+            ? costDisplay.textContent
+            : 'LKR 150,000 Initial Setup + LKR 18,000 / month',
+          estimatedDuration: durationDisplay.textContent
+        };
+
+        submitButton.disabled = true;
+        status.textContent = 'Sending your specification…';
+        status.classList.add('is-pending');
+
+        try {
+          const response = await fetch('/api/estimate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          if (!response.ok) throw new Error('Estimate submission failed.');
+
+          form.reset();
+          recalculate();
+          status.textContent = 'Specification sent. The J&co. team will be in touch shortly.';
+          status.className = 'estimator-status is-success';
+        } catch (_error) {
+          status.textContent = 'We could not send your specification. Please try again or email hello@jnco.tech.';
+          status.className = 'estimator-status is-error';
+        } finally {
+          submitButton.disabled = false;
+        }
+      });
+
+      updateProjectPricing();
+      recalculate();
+    })();
+  </script>
+</body>
+</html>

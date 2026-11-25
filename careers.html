@@ -32,13 +32,24 @@
       <img src="assets/logo.png" alt="J&co. Software Solutions Logo" width="100" height="25" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
       <span class="logo-text" aria-hidden="true">J&co.</span>
     </a>
-    <nav class="nav">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="site-navigation">
       <a href="index.html#work">Work</a>
       <a href="index.html#portfolio">Portfolio</a>
       <a href="index.html#demos">Demos</a>
       <a href="index.html#services">Services</a>
       <a href="index.html#clients">Clients</a>
       <a href="index.html#reviews">Reviews</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="free-tools-menu">
+          Free tools <span class="nav-chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="nav-dropdown-menu" id="free-tools-menu" hidden>
+          <li><a href="estimator.html">Cost Estimator</a></li>
+        </ul>
+      </div>
       <a href="careers.html" aria-current="page">Careers</a>
       <a href="index.html#contact">Contact</a>
     </nav>
@@ -190,6 +201,7 @@
     <p class="footer-copy">&copy; <span id="year"></span> J&co. All rights reserved.</p>
   </footer>
 
+  <script src="assets/navigation.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
